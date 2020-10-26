@@ -223,7 +223,7 @@ Zotero.ZotFile.pdfAnnotations = new function() {
             settings_colors = JSON.parse(this.getPref("pdfExtraction.colorCategories")),
             setting_color_notes = this.getPref("pdfExtraction.colorNotes"),
 	    setting_aggregate_color_highlights = this.getPref("pdfExtraction.colorAnnotations"),
-	    // Uncomment the preferred citation format below, which is currently set to APA style	    
+	    // Uncomment the preferred citation format below. Currently, it is set to APA style.
 	    // APA:
 		cite = this.getPref("pdfExtraction.NoteFullCite") ? (str_title += " APA FullCite ", this.Wildcards.replaceWildcard(item, "%a, %y").replace(/_(?!.*_)/," & ").replace(/_/g,", ") + ", p. ") : (str_title += " APA PageCite ","p. "),
 	    // or Harvard:
