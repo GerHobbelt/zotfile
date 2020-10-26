@@ -1,3 +1,5 @@
+**Note:** This is a forked version of Joscha Legewie's Zotfile extension, modified to produce APA-style citations upon PDF extraction.
+
 # ZotFile: Advanced PDF management for Zotero
 ### Joscha Legewie
 
