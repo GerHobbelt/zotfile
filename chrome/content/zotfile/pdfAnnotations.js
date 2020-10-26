@@ -223,7 +223,15 @@ Zotero.ZotFile.pdfAnnotations = new function() {
             settings_colors = JSON.parse(this.getPref("pdfExtraction.colorCategories")),
             setting_color_notes = this.getPref("pdfExtraction.colorNotes"),
 	    setting_aggregate_color_highlights = this.getPref("pdfExtraction.colorAnnotations"),
-            cite = this.getPref("pdfExtraction.NoteFullCite") ? this.Wildcards.replaceWildcard(item, "%a %y:").replace(/_(?!.*_)/," and ").replace(/_/g,", ") : "p. ",
+	    // Uncomment the preferred citation format below, which is currently set to APA style	    
+	    // APA:
+		cite = this.getPref("pdfExtraction.NoteFullCite") ? (str_title += " APA FullCite ", this.Wildcards.replaceWildcard(item, "%a, %y").replace(/_(?!.*_)/," & ").replace(/_/g,", ") + ", p. ") : (str_title += " APA PageCite ","p. "),
+	    // or Harvard:
+		//cite = this.getPref("pdfExtraction.NoteFullCite") ? (str_title += " Harvard FullCite ", this.Wildcards.replaceWildcard(item, "%a, %y").replace(/_(?!.*_)/," and ").replace(/_/g,", ") + ", p. ") : (str_title += " Harvard PageCite ","p. "),
+	    // or MLA:
+		//cite = this.getPref("pdfExtraction.NoteFullCite") ? (str_title += " MLA FullCite ", this.Wildcards.replaceWildcard(item, "%a").replace(/_(?!.*_)/," and ").replace(/_/g,", ") + " ") : (str_title += " MLA PageCite ",""),
+	    //	Zotfile Default:
+	        //cite = this.getPref("pdfExtraction.NoteFullCite") ? this.Wildcards.replaceWildcard(item, "%a %y:").replace(/_(?!.*_)/," and ").replace(/_/g,", ") : "p. ",
             repl = JSON.parse(this.getPref("pdfExtraction.replacements")),
             reg = repl.map(function(obj) {
                 var flags = ('flags' in obj) ? obj.flags : "g";
